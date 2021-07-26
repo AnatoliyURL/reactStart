@@ -12,12 +12,12 @@ const clineCompiler = webpack(webpackClientConfig)
 hmrServer.use(webpackDevMiddleware(clineCompiler, {
     publicPath: webpackClientConfig.output.publicPath,
     serverSideRender: true,
-    noInfo: true,
+    /*noInfo: true,
     watchOptions: {
         ignore: /dist/
-    },
+    },*/
     writeToDisk: true,
-    stats: 'error-only'
+    stats: 'errors-only'
 }))
 
 hmrServer.use(webpackHotMiddleware(clineCompiler, {
